@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getRoadmaps } from '../actions/Roadmap.actions';
+
 class RoadmapsPage extends Component {
   render() {
     return (
@@ -14,5 +16,11 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    getRoadmaps: authorId => dispatch(getRoadmaps(authorId)),
+  }
+};
 
-export default connect(mapStateToProps)(RoadmapsPage);
+
+export default connect(mapStateToProps, mapDispatchToProps)(RoadmapsPage);
