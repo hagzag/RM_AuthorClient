@@ -1,5 +1,8 @@
 import "slim-js"
 import "webco/components/t-stars"
+import "webco/components/t-header"
+import "webco/components/t-message-box"
+import "webco/components/t-message"
 
 
 import React from 'react';
