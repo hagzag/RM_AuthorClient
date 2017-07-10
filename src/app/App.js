@@ -6,10 +6,14 @@ import './App.scss';
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <t-header ref={(e) => { this.tHeader = e; }} logo-name="logoName" logo-url="http://pach.com" user-url="http://avatar.jpg" user-name="Ortal"></t-header>
-        <Sidebar></Sidebar>
-        <RoadmapsPage />
+      <div className="main">
+          <header>
+              <t-header ref={(e) => { this.tHeader = e; }} logo-name="logoName" logo-url="http://pach.com" user-url="http://avatar.jpg" user-name="Ortal"></t-header>
+          </header>
+          <section>
+              <Sidebar></Sidebar>
+              <RoadmapsPage />
+          </section>
       </div>
     );
   }
