@@ -134,7 +134,9 @@
     "seamless-immutable": "^7.1.2",
     "semantic-ui-css": "^2.2.10",
     "semantic-ui-react": "^0.68.5",
+    "slim-js": "^2.9.9",
     "sockjs-client": "1.1.4",
+    "webco": "git+https://github.com/evyros/webco.git",
     "webstomp-client": "^1.0.6"
   }
 }

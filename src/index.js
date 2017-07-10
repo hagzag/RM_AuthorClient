@@ -1,3 +1,7 @@
+import "slim-js"
+import "webco/components/t-stars"
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createReduxStore from './app/bootstrap/createReduxStore';
