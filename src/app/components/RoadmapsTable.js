@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 
 export default class RoadmapTable extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       filter: ''
@@ -22,9 +22,9 @@ export default class RoadmapTable extends Component {
   );
 
   render() {
-    const filteredData = this.props.data
+    const filteredData = this.props.roadmaps
       .filter(r => Object.values(r).join('||').indexOf(this.state.filter) >= 0)
-      .map(r => this.renderRecord(r))
+      .map(r => this.renderRoadmap(r))
 
     return (
       <div>
