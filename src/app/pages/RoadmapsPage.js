@@ -3,7 +3,7 @@ import RoadmapTable from '../components/RoadmapTable';
 import { Panel } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { getRoadmaps } from '../actions/Roadmap.actions';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 class RoadmapsPage extends Component {
 
@@ -26,7 +26,7 @@ class RoadmapsPage extends Component {
     return (
       <div>
         <Panel>
-          <Button onClick={this.openRoadmapWizard}>Add RoadMap</Button>
+            <Link to="/add-roadmap"> Add Roadmap </Link>
         </Panel>
           <Panel header={header}>
               <RoadmapTable data={this.props.roadmaps} />
