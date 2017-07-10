@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import RoadmapTable from "./components/RoadmapTable";
+import RoadmapTabs from "./components/RoadmapTabs";
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div>
         <div>authors</div>
-        <RoadmapTable />
+        <RoadmapTabs/>
       </div>
     );
   }
 }
+
+export default App;
