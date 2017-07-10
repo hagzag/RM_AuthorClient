@@ -1,5 +1,6 @@
-import "slim-js"
-import "webco/components/t-stars"
+import "slim-js";
+import "webco/components/t-stars";
+import './assets/styles.scss';
 
 
 import React from 'react';

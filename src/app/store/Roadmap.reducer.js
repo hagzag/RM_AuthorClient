@@ -1,4 +1,4 @@
-import { STORE_ROADMAPS } from '../actions/Roadmap.actions';
+import { STORE_ROADMAPS } from '../actions/index.actions';
 
 const INITIAL_STATE = {
   roadmaps: [],
