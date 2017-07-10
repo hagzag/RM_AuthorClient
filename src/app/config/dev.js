@@ -2,7 +2,7 @@ import { base } from './base';
 
 const devConfig = {
   appEnv: 'dev',
-  baseUrl: 'http://servername:8001/index.html',
+  baseUrl: 'http://localhost:3000',
 };
 
 devConfig.webSocketUrl = `${devConfig.baseUrl}notification-ws`;

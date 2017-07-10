@@ -1,9 +1,9 @@
 import axios from 'axios';
 import {config} from 'config'; // eslint-disable-line
-import { getToken } from '../app/utils/AuthUtil';
+// import { getToken } from '../app/utils/AuthUtil';
 
 axios.defaults.baseURL = config.baseUrl;
-axios.defaults.headers.post['Content-Type'] = 'application/json';
+// axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.timeout = 60000 * 5;
 
 // axios.interceptors.request.use((config) => {
