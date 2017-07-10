@@ -6,7 +6,7 @@ export default class App extends Component {
     return (
       <div>
         <div>authors</div>
-        <RoadmapTable />
+        <t-stars value="5"></t-stars>
       </div>
     );
   }
