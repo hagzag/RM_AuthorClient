@@ -78,10 +78,10 @@ module.exports = {
   },
   plugins: [
     scssExtract,
-    new CopyWebpackPlugin([
-      { from: 'images', to: 'images' },
-      { from: 'assets', to: 'assets' },
-    ]),
+    // new CopyWebpackPlugin([
+    //   { from: 'images', to: 'images' },
+    //   { from: 'assets', to: 'assets' },
+    // ]),
     new HtmlWebpackPlugin({
       template: resolve(sourcePath, 'index.html'),
     }),

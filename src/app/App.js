@@ -1,3 +1,9 @@
 import React, { Component } from 'react';
 
-export default class 
+export default class App extends Component {
+  render() {
+    return (
+      <div>authors</div>
+    );
+  }
+}
