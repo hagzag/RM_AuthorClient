@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 
-export default class RoadmapTable extends Component {
+export default class RoadmapsTable extends Component {
 
-  renderRoadmap = rm => (
-    <tr>
+  renderRoadmap = (rm, key) => (
+    <tr key={key}>
       <td>{rm.title}</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{rm.version}</td>
+      <td>{rm.tutors ? rm.tutors.length : 0}</td>
+      <td>{rm.students ? rm.students.length : 0}</td>
+      <td>{rm.graduates ? rm.graduates.length : 0}</td>
+      <td><t-stars value={rm.rating}></t-stars></td>
     </tr>
   );
 
@@ -26,7 +28,7 @@ export default class RoadmapTable extends Component {
         </tr>
         </thead>
         <tbody>
-          {this.props.roadmaps.map(roadmap => this.renderRoadmap(roadmap))}
+          {this.props.roadmaps.map((roadmap, i) => this.renderRoadmap(roadmap, i))}
         </tbody>
       </Table>
     );
