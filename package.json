@@ -122,6 +122,7 @@
     "react": "^15.5.4",
     "react-autobind": "^1.0.6",
     "react-bootstrap": "^0.31.0",
+    "react-bootstrap-table": "3.3.7",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "3.*",

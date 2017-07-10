@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 
-export default class RoadmapsTable extends Component {
+export default class RoadmapTable extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      filter: ''
+    }
+  }
 
   renderRoadmap = (rm, key) => (
     <tr key={key}>
@@ -15,22 +22,38 @@ export default class RoadmapsTable extends Component {
   );
 
   render() {
+    const filteredData = this.props.data
+      .filter(r => Object.values(r).join('||').indexOf(this.state.filter) >= 0)
+      .map(r => this.renderRecord(r))
+
     return (
-      <Table striped bordered condensed hover>
-        <thead>
-        <tr>
-          <th>Title</th>
-          <th>Version</th>
-          <th># Tutors</th>
-          <th># Students</th>
-          <th># Graduates</th>
-          <th>Ratings</th>
-        </tr>
-        </thead>
-        <tbody>
-          {this.props.roadmaps.map((roadmap, i) => this.renderRoadmap(roadmap, i))}
-        </tbody>
-      </Table>
+      <div>
+        <div>
+          Filter: <input placeholder="Type to filter..."
+                         value={this.state.filter}
+                         onChange={e => this.setState({filter: e.target.value})} />
+        </div>
+        <Table striped bordered condensed hover>
+          <thead>
+          <tr>
+            <th>Title</th>
+            <th>Version</th>
+            <th># Tutors</th>
+            <th># Students</th>
+            <th># Graduates</th>
+            <th>Ratings</th>
+          </tr>
+          </thead>
+          <tbody>
+          { filteredData }
+          </tbody>
+          <tfoot>
+          <tr>
+            {this.props.roadmaps.map((roadmap, i) => this.renderRoadmap(roadmap, i))}
+          </tr>
+          </tfoot>
+        </Table>
+      </div>
     );
   }
 }
