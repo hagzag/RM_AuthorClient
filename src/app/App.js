@@ -8,7 +8,6 @@ export default class App extends Component {
     return (
       <div>
         <t-header ref={(e) => { this.tHeader = e; }} logo-name="logoName" logo-url="http://pach.com" user-url="http://avatar.jpg" user-name="Ortal"></t-header>
-        <div>
         <Sidebar></Sidebar>
         <RoadmapsPage />
       </div>
@@ -28,6 +27,7 @@ export default class App extends Component {
                 text: 'another message another message 56747',
                 date: '26/8/16',
                 isNew: false
-            }];
+            }
+        ]
     }
 }
