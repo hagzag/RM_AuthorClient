@@ -4,10 +4,16 @@ import "webco/components/t-stars"
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/App';
+import createReduxStore from './app/bootstrap/createReduxStore';
+import routes from './routes';
+import { Router, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
 
-// const store = configureStore();
+const store = createReduxStore();
+
 ReactDOM.render(
-  <App />,
+  <Provider store={store} >
+    <Router history={browserHistory} routes={routes} />
+  </Provider>,
   document.getElementById('app')
 );
