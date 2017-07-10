@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Table } from 'react-bootstrap';
 
 export default class RoadmapTable extends Component {
+
   renderRoadmap = rm => (
     <tr>
       <td>{rm.title}</td>
