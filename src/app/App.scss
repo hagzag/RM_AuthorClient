@@ -1,0 +1,26 @@
+.sidebar {
+    width: 240px;
+    background-color: #3A4B55;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 4rem;
+    min-height: 100%;
+        .nav {
+                margin: 0;
+                li {
+                    background-color: transparent;
+                    border: none;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 100;
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.1);;
+                    }
+                    &:first-child {
+                        border-top: none;
+                    }
+                }
+            }
+        }

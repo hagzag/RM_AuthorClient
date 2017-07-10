@@ -16,12 +16,19 @@ class RoadmapsPage extends Component {
   };
 
   render() {
+    const header = (
+        <h2>
+            <span className="fa fa-calendar" aria-hidden="true">&nbsp;&nbsp;</span>
+            Active Roadmaps
+        </h2>
+    )
+
     return (
       <div>
         <Panel>
           <Button onClick={this.openRoadmapWizard}>Add RoadMap</Button>
         </Panel>
-          <Panel header="Active Roadmaps">
+          <Panel header={header}>
               <RoadmapTable data={this.props.roadmaps} />
           </Panel>
       </div>
