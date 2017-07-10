@@ -3,7 +3,7 @@ import { RoadmapsMock } from '../../mock/Roadmap.mock';
 import axios from 'axios';
 
 export const getRoadmaps = authorId => dispatch => {
-  return axios.get('roadmaps', { name})
+  return axios.get('roadmaps')
     .then(res => {
       dispatch({ type: STORE_ROADMAPS, roadmaps: res.data.data });
     })
@@ -12,7 +12,7 @@ export const getRoadmaps = authorId => dispatch => {
 };
 
 export const addRoadmap = roadmap => dispatch => {
-  return axios.post('roadmaps', { roadmapId: '111' })
+  return axios.post('roadmaps', { roadmap: roadmap })
     .then(res => {
       dispatch(getRoadmaps());
     })
@@ -20,7 +20,7 @@ export const addRoadmap = roadmap => dispatch => {
 };
 
 export const deleteRoadmap = roadmapId => dispatch => {
- return axios.delete('roadmaps', { roadmapid: roadmapId })
+ return axios.delete(`roadmaps/${roadmapId}`)
    .then(res => {
      dispatch(getRoadmaps());
    })
