@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Panel } from 'react-bootstrap';
 
-export default class RoadmapTable extends Component {
+export default class RoadmapsTable extends Component {
   constructor(props) {
     super(props);
 
@@ -13,6 +13,7 @@ export default class RoadmapTable extends Component {
   renderRoadmap = (rm, key) => (
     <tr key={key}>
       <td>{rm.title}</td>
+      <td>{rm.description}</td>
       <td>{rm.version}</td>
       <td>{rm.tutors ? rm.tutors.length : 0}</td>
       <td>{rm.students ? rm.students.length : 0}</td>
@@ -28,15 +29,16 @@ export default class RoadmapTable extends Component {
 
     return (
       <div>
-        <div>
+        <Panel>
           Filter: <input placeholder="Type to filter..."
                          value={this.state.filter}
                          onChange={e => this.setState({filter: e.target.value})} />
-        </div>
+        </Panel>
         <Table striped bordered condensed hover>
           <thead>
           <tr>
             <th>Title</th>
+            <th>Description</th>
             <th>Version</th>
             <th># Tutors</th>
             <th># Students</th>
@@ -45,13 +47,8 @@ export default class RoadmapTable extends Component {
           </tr>
           </thead>
           <tbody>
-          { filteredData }
+          { this.props.roadmaps.map((rm, i) => this.renderRoadmap(rm, i))}
           </tbody>
-          <tfoot>
-          <tr>
-            {this.props.roadmaps.map((roadmap, i) => this.renderRoadmap(roadmap, i))}
-          </tr>
-          </tfoot>
         </Table>
       </div>
     );

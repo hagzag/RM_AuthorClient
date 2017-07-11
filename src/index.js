@@ -12,8 +12,10 @@ import createReduxStore from './app/bootstrap/createReduxStore';
 import routes from './routes';
 import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
+import './app/bootstrap/axios.conf';
 
-const store = createReduxStore();
+
+export const store = createReduxStore();
 
 ReactDOM.render(
   <Provider store={store} >

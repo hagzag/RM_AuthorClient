@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import RoadmapTable from '../components/RoadmapTable';
+import RoadmapsTable from '../components/RoadmapsTable';
 import { Panel } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { getRoadmaps } from '../actions/Roadmap.actions';
 import { Button } from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 class RoadmapsPage extends Component {
 
@@ -13,6 +14,7 @@ class RoadmapsPage extends Component {
 
   openRoadmapWizard = () => {
     console.log('open roadmap wizard');
+    browserHistory.push('newroadmap');
   };
 
   render() {
@@ -29,7 +31,7 @@ class RoadmapsPage extends Component {
           <Button onClick={this.openRoadmapWizard}>Add RoadMap</Button>
         </Panel>
           <Panel header={header}>
-              <RoadmapTable data={this.props.roadmaps} />
+              <RoadmapsTable roadmaps={this.props.roadmaps} />
           </Panel>
       </div>
     );

@@ -12,7 +12,7 @@ export default class App extends Component {
           </header>
           <section>
               <Sidebar></Sidebar>
-              <RoadmapsPage />
+            {this.props.children}
           </section>
       </div>
     );
